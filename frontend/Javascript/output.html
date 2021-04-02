@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+        <title>Javascript Test</title>
+    </head>
+
+    <body>
+    <!---------- Number 1 ---------->
+    <div class="number1">
+      <h2>สามารถใช้ผ่าน getElementById โดยใช้คำว่า Hello Word ! </h2>  
+     <div id="mylist">
+     </div>
+    </div>
+
+    <!---------- Number 2 ---------->
+     <div class="number2">
+      <div id="box"></div>
+     </div>
+     
+    <!---------- Number 3 ---------->
+
+      <div class="number3">
+      <div class="row">
+       <div class="col-md-6">
+         <label for="textname">Name : </label>
+         <input type="text" class=" textbox mt-5" id="formtext">
+       </div>
+      </div>
+     </div> 
+
+
+    <!---------- Number 4   ---------->
+
+    <div class="number4">
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="checkbox">CheckBox : </label>
+                <input type="checkbox"><br>
+                <label for="radiobox">radiobox :</label>
+                <input type="radio">
+            </div>
+        </div>
+
+    </div>
+
+    <!---------- Number 7   ---------->
+     <div class="number7 mt-5">
+         <div id="love-message">   
+         </div>  
+         <button onclick="startFuction()">Enter Button</button>
+     </div>
+    
+    <!---------- Number 8   ---------->
+     <div class="number8 mt-5">
+         <div id="like-message">
+         </div>
+         <button onclick="timeloopFuction()">Enter Button</button>
+         <button onclick="stoptimeloop()">Enter Stop</button>
+     </div>  
+     
+    <!---------- Number 9   ---------->
+     <div class="number9 mt-5">
+         <div id="alertbtn">
+             <button id="aws-btn" onclick="alertButton()">Enter Alert</button>
+         </div>
+     </div>
+
+    <!---------- Number 10   ---------->
+     <div class="number10 mt-5">
+         <div id="btn-alert"> 
+         </div>
+         <button onclick="reversStr()">Enter reversword</button>
+     </div>
+
+    <!---------- Number 11   ---------->
+     <div class="number11 mt-5">
+         <div id="btn-url">
+            <video id="videos" width="320" height="240" controls>
+                <source src="/Javascript/CowandChicken.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+         </div>
+         <button onclick="enableVideo()" id="play-btn">Play</button>
+         <button onclick="pauseVideo()" id="pause-btn">Pause</button>
+     </div>
+
+    <!---------- Number 14   ---------->
+     <div class="number14 mt-5">
+         <div id="calculate-arr">
+         </div>
+         <button onclick="arrcalFunc()">Calculate</button>
+     </div>
+
+     
+    <script>
+    //-------- Number1 -------- //
+    document.getElementById("mylist").innerHTML= "Hello Word ! ";
+    
+    //-------- Number2 -------- //
+    var box = document.getElementById("box");
+    box.style.backgroundColor = "red";
+    box.style.width = "100px";
+    box.style.height = "100px";
+    box.style.borderColor = "green";
+    box.style.borderStyle = "solid";
+    box.style.opacity = "0.7";
+
+    // document.getElementById("formtext").value = "test";
+    // var name = ['somchai' , 'mana' , 'manee'] ; 
+    // console.log(name)
+
+    //-------- Number7 -------- //
+
+    var timeout;
+    function startFuction(){
+        timeout = setTimeout(alertFunc,  8000);
+    }
+
+    function alertFunc(){
+        document.getElementById("love-message").innerHTML += "I LOVE YOU ";
+    }
+
+
+    
+    //-------- Number8 -------- //
+
+    var timeloop;
+    function timeloopFuction(){
+        timeloop = setInterval(function(){alertTime (); }, 5000);
+    }
+    function alertTime(){
+        document.getElementById("like-message").innerHTML +="I Like You " + "<br>";
+    }
+    function stoptimeloop(){
+        clearInterval(timeloop);
+    }
+    
+    //-------- Number9 -------- //
+    
+    function alertButton(){
+        alert ("Alert Successfully . ");
+    }
+
+    //-------- Number10 -------- //
+
+    var reversword = ["I " ,"Love ", "Javascript"] ;
+    document.getElementById("btn-alert").innerHTML = reversword;
+
+    function reversStr(){
+        reversword.reverse();
+        document.getElementById("btn-alert").innerHTML = reversword;
+    }
+
+    //-------- Number10 -------- //
+     var vide = document.getElementById("videos");
+     
+     function enableVideo(){
+         vide.autoplay = "true";
+         vide.load();
+     }
+
+     function pauseVideo(){
+         vide.autoplay = "false";
+         vide.load();
+     }
+
+    //-------- Number14 -------- //
+
+    var numbera = ["1","9","9","3","2","1","3","6"];
+    var sumation ;
+    var numberb = ["1","2","3","4","5","6","7","8"];
+    sumation = numbera*numberb;
+    document.getElementById("calculate-arr").innerHTML = numbera;
+
+    function arrcalFunc(){
+
+
+        document.getElementById("calculate-arr").innerHTML= numbera;
+
+    }
+
+    </script>
+    </body>
+</html>
